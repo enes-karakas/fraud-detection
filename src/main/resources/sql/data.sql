@@ -1,21 +1,22 @@
+--CLIENT
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('john.winterberg@gmail.com', '$2y$10$Y9UF.7weptpgJT/cGYEuOOQanWx7FqH83.Z3nNPzzPh6EjvaTJA7O'); --zoetzure_saus
+VALUES ('john.winterberg@gmail.com', '$2a$04$hXCutIeR7fPkqDllYx5crOpbHfjgh3bLK4cGm3RvFPwtYVYHUNFAW'); --zoetzure_saus
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('sven.svenson@live.se', '$2y$10$pof1M5aDlKemmzHRTORZnumWPBN62SzPaeFEdv27SQfrAKv6H7HOe'); --mayonaise
+VALUES ('sven.svenson@live.se', '$2a$04$4CAIHjfVLb/eP5V0yRLAC.qn4RWfvq4rrLpfX04MhSP8rnxzBJAbG'); --calorierijk-water
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('karel.dedecker@hotmail.com', '$2y$10$iQ2piNS1v/35RBHFiUPdJez/951vSbAo8P61TEfIPAhFb3gB21SGq'); --zoetzure_mayonaise
+VALUES ('karel.dedecker@hotmail.com', '$2a$04$7KCm298oSUFIFpMZpxRfRu4phvQQdUT2Y58eDShmdMULAiDR3N8YK'); --herstelde_schedelbreuk
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('start.met.voorsprong@kdg.be', '$2y$10$cytzOUl9gwn9qJ5Hz0nCmOKQ.EJ1nMefbFyqXbBlr5dw8KMyvCQm2'); --onvegetarische_groenten
+VALUES ('start.met.voorsprong@kdg.be', '$2a$04$SsWuimtQqOFIS8ZY8OrTXuqI3.ZduT.rXEd8NSLVNLEhZ53p.Bd4G'); --onvegetarische_groenten
 
-
+--STAFF
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES('jos.desos@celestial.insurances.be', '$2y$10$M0xT.qiQvR5XwuBjGZdSZexxbvSJtXJVbx6Ki8MBI6b7eAKtYFbOq'); --barbecue_handelaar
+VALUES('jos.desos@celestial.insurances.be', '$2a$04$R7beNUzipFEhkYqKY3n7zepWwsWcHZc6f8Siz0bnzRv2A7cnTwnle'); --barbecuehandelaar_met_strafblad
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('josef.janssens@celestial.insurances.be', '$2y$10$hNO7ZlpBz8Cm/ZhNr9ohmefNibwh0UF02v/hH4q89tztpL3yK4xJ.'); --ketchup_dief
+VALUES ('josef.janssens@celestial.insurances.be', '$2a$04$HEUusPHOx6fSgQUE6k6mHuJjeASiikDTRcaZylcHkUg30RcAIGyDq'); --trotse_ketchup_dief
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('bart.pauwels@celestial.insurances.be', '$2y$10$6IggtE/rx/26zwavmDyAnuwgNHu61PD5tIirHVXUENxAtQZMs113S'); --ik_verzamel_dode_vogels
+VALUES ('bart.pauwels@celestial.insurances.be', '$2a$04$COcBiUay6k6dlmaGZJurJ.8S8iQR..tTxbF9OHF3HReOxgu/7697a'); --ik_verzamel_dode_vogels
 INSERT INTO USERS (USERNAME, PASSWORD)
-VALUES ('chaim.weinstein@celestial.insurances.be', '$2y$10$/HR010s7/tODzJF8oEZBve4nZb1Jky4GeDvQzfV0wSRdVM6U36vJS'); --vissen_zijn_voedsel
+VALUES ('chaim.weinstein@celestial.insurances.be', '$2a$04$TetK3MXypHa34BKq1NMBi.nA/iGkYbR78AqIq2wwk9oxN1ZMRc5Xq'); --vissen_zijn_voedsel
 
 
 INSERT INTO ROLE (ROLE_TYPE, "USER_USER_ID") VALUES ('ROLE_CLIENT', 1);
