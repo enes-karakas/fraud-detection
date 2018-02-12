@@ -12,7 +12,7 @@ import org.neo4j.ogm.annotation.Relationship;
 import java.util.HashSet;
 import java.util.Set;
 
-
+@NodeEntity
 public class Accident {
     @GraphId private Long id;
     private String name;
@@ -36,25 +36,19 @@ public class Accident {
 
     public void IsPartOfClaims(Person person) {
 
-        if (person.getRole().equals(RoleClaim.PASSENGER)) {
+        if (person.getRole().equals("PASSENGER")) {
             if (passengers == null) {
                 passengers = new HashSet<>();
             }
             passengers.add(person);
         }
-        if (person.getRole().equals(RoleClaim.DRIVER1)) {
+        if (person.getRole().equals("DRIVER")) {
             if (drivers1 == null) {
                 drivers1 = new HashSet<>();
             }
             drivers1.add(person);
         }
-        if (person.getRole().equals(RoleClaim.DRIVER2)) {
-            if (drivers2 == null) {
-                drivers2 = new HashSet<>();
-            }
-            drivers2.add(person);
-        }
-        if (person.getRole().equals(RoleClaim.WITNESS)) {
+        if (person.getRole().equals("WITNESS")) {
             if (witnesses == null) {
                 witnesses = new HashSet<>();
             }

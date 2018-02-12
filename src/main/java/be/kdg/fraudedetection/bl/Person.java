@@ -16,7 +16,7 @@ import java.util.Set;
 public class Person {
     @GraphId private Long id;
     private String name;
-    private RoleClaim role;
+    private String role;
 
     private Person() {
         // Empty constructor required as of Neo4j API 2.0.5
@@ -34,7 +34,7 @@ public class Person {
         this.name = name;
     }
 
-    public RoleClaim getRole() {
+    public String getRole() {
         return role;
     }
 }

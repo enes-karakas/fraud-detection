@@ -13,8 +13,7 @@ import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AccidentRepository extends GraphRepository<Accident> {
-    Person findByDrivers1(Person person);
-    Person findByDrivers2(Person person);
+    Person findByDrivers(Person person);
     Person findByPassengers(Person person);
     Person findByWitnesses(Person person);
 
