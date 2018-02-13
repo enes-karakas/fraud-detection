@@ -27,10 +27,8 @@ public class Accident {
 
     @Relationship(type = "WITNESS", direction = Relationship.UNDIRECTED)
     public Set<Person> witnesses;
-    @Relationship(type = "DRIVER1", direction = Relationship.UNDIRECTED)
-    public Set<Person> drivers1;
-    @Relationship(type = "DRIVER2", direction = Relationship.UNDIRECTED)
-    public Set<Person> drivers2;
+    @Relationship(type = "DRIVER", direction = Relationship.UNDIRECTED)
+    public Set<Person> drivers;
     @Relationship(type = "PASSENGER", direction = Relationship.UNDIRECTED)
     public Set<Person> passengers;
 
@@ -43,10 +41,10 @@ public class Accident {
             passengers.add(person);
         }
         if (person.getRole().equals("DRIVER")) {
-            if (drivers1 == null) {
-                drivers1 = new HashSet<>();
+            if (drivers == null) {
+                drivers = new HashSet<>();
             }
-            drivers1.add(person);
+            drivers.add(person);
         }
         if (person.getRole().equals("WITNESS")) {
             if (witnesses == null) {
