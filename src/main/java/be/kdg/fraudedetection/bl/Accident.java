@@ -5,6 +5,8 @@ package be.kdg.fraudedetection.bl;
  * @version 1.0 12/02/18 16:47 *
  */
 
+import be.kdg.fraudedetection.bl.dom.RoleClaim;
+import be.kdg.fraudedetection.bl.dom.roles.Role;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
@@ -34,19 +36,19 @@ public class Accident {
 
     public void IsPartOfClaims(Person person) {
 
-        if (person.getRole().equals("PASSENGER")) {
+        if (person.getRole().equals(RoleClaim.PASSENGER.getRole())) {
             if (passengers == null) {
                 passengers = new HashSet<>();
             }
             passengers.add(person);
         }
-        if (person.getRole().equals("DRIVER")) {
+        if (person.getRole().equals(RoleClaim.DRIVER.getRole())) {
             if (drivers == null) {
                 drivers = new HashSet<>();
             }
             drivers.add(person);
         }
-        if (person.getRole().equals("WITNESS")) {
+        if (person.getRole().equals(RoleClaim.WITNESS.getRole())) {
             if (witnesses == null) {
                 witnesses = new HashSet<>();
             }

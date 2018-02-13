@@ -13,6 +13,10 @@ public enum RoleClaim {
         this.role = role;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     @Override
     public String toString() {
         return String.format("%s", role);
