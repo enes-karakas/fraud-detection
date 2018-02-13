@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Services</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.css">
+    <link rel="stylesheet" media="screen" th:href="@{/css/modern-business.css}">
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Celestial Insurances</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services.do">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Dag <span th:text="${firstname}"></span>, wat kunnen we voor je doen?</h1>
+
+    <div class="card" style="width:400px; margin-bottom: 5%;">
+        <img class="card-img-top" th:src="@{/img/claim.jpg}" h alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Een claim maken voor een accident</h4>
+            <p class="card-text">Net een accident gehad? Er is helaas niets om dit om te keren. Wel kan je een claim plaatsen.</p>
+            <a href="/claim.do" class="btn btn-primary">Claim voor een accident</a>
+        </div>
+    </div>
+
+    <div class="card" style="width:400px; margin-bottom: 5%;">
+        <img class="card-img-top" th:src="@{/img/consultation.png}" h alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Een afspraak maken voor een consultatie</h4>
+            <p class="card-text">Zit je met een prangende vraag? Je mag altijd op consultatie komen.</p>
+            <a href="#" class="btn btn-primary">Consultatie</a>
+        </div>
+    </div>
+
+
+</div>
+
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Celestial Insurances 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/contact_me.js}"></script>
+<script th:src="@{/js/jqBootstrapValidation.js}"></script>
+</body>
+</html>

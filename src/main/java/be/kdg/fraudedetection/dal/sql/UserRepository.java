@@ -1,4 +1,4 @@
-package be.kdg.fraudedetection.dal;
+package be.kdg.fraudedetection.dal.sql;
 
 import be.kdg.fraudedetection.bl.dom.User;
 import org.springframework.data.jpa.repository.JpaRepository;

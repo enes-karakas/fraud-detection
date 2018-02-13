@@ -35,8 +35,9 @@ dependencies {
 	compile('org.thymeleaf.extras:thymeleaf-extras-java8time:2.1.0.RELEASE')
 	compile('com.h2database:h2')
 	compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
-	compile('org.webjars:bootstrap:3.3.7')
+	compile('org.webjars:bootstrap:4.0.0')
 	compile('org.webjars:jquery:3.2.1')
 	compile("org.springframework.boot:spring-boot-starter-data-neo4j")
+	testCompile(group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3')
 
 }

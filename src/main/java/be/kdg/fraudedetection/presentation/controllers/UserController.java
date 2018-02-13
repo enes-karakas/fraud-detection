@@ -1,4 +1,4 @@
-package be.kdg.fraudedetection.presentation;
+package be.kdg.fraudedetection.presentation.controllers;
 
 import be.kdg.fraudedetection.bl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +17,10 @@ public class UserController {
         this.userService = userService;
     }
 
-  /*  @RequestMapping(value = "/login.do", method = RequestMethod.GET)
-    public ModelAndView login(ModelAndView mav) {
-        mav.setViewName("login");
-        return mav;
-    }*/
-  @RequestMapping("/login.do")
-  public String login() {
-      return "login";
-  }
+    @RequestMapping("/login.do")
+    public String login() {
+        return "login";
+    }
 
     @RequestMapping("/login-error")
     public String loginError(Model model) {

@@ -16,6 +16,12 @@ public class User implements UserDetails {
     @Column(name = "userId")
     private Integer userId;
 
+    @Column(name = "FIRSTNAME")
+    private String firstname;
+
+    @Column(name = "LASTNAME")
+    private String lastname;
+
     @Column(name = "USERNAME")
     private String username;
 
@@ -28,7 +34,9 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(String firstname, String lastname, String username, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.username = username;
         this.password = password;
     }
@@ -90,5 +98,21 @@ public class User implements UserDetails {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }

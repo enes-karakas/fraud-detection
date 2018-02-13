@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Claim</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.css">
+    <link rel="stylesheet" media="screen" th:href="@{/css/modern-business.css}">
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Celestial Insurances</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services.do">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>Claiming an accident </h1>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><span th:text="${firstname}"></span>, please give us basic details about the accident</h4>
+        </div>
+        <div class="panel-body">
+            <form action="/newAccident.do" method="post" th:object="${accidentDTO}">
+                <div class="form-group">
+                    <label for="name">Accident name</label>
+                    <input type="text" th:field="*{name}" class="form-control" id="name"
+                           placeholder="Enter name for accident">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date of accident</label>
+                    <input type="datetime-local" class="form-control" th:value="*{date}" th:field="*{date}" id="date">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Celestial Insurances 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/contact_me.js}"></script>
+<script th:src="@{/js/jqBootstrapValidation.js}"></script>
+</body>
+</html>

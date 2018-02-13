@@ -20,6 +20,9 @@ public class WebContextConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
+        registry.addViewController("/index.html").setViewName("index");
+        registry.addViewController("/contact.html").setViewName("contact");
+        registry.addViewController("/about.html").setViewName("about");
     }
 
     @Bean

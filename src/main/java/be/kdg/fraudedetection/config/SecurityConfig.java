@@ -39,7 +39,7 @@ public class SecurityConfig  {
             });*/
 
             http.authorizeRequests()
-                    .antMatchers("/topic/**", "/register.do").permitAll()
+                    .antMatchers("/about.html", "/contact.html", "/index.html").permitAll()
 //                    .antMatchers("/client/**").access("hasRole('ROLE_CLIENT')")
 //                    .antMatchers("/repairer/**").access("hasRole('ROLE_REPAIRER')")
                     .anyRequest().authenticated()      // remaining URL's require authentication

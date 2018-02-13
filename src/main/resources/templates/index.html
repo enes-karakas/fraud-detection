@@ -5,8 +5,153 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.css">
+    <link rel="stylesheet" media="screen" th:href="@{/css/modern-business.css}">
 </head>
 <body>
-<h1>Celsetial Insurances</h1>
+
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Celestial Insurances</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services.do">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('http://cambridgefidelitybenefits.com/images/background/bg02.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Family Insurance</h3>
+                    <p>Ever wondered what the finicial consequences are when a disaster happens to the family?</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://i.ytimg.com/vi/UiyMtSUe37M/maxresdefault.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="color: black">Car Insurance</h3>
+                    <p style="color: black">Just one misbehaving person could ruin your car.</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('http://insurancelovers.com/wp-content/uploads/2014/08/Images-Health-Insurance-HD-Wallpaper.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="color: black">Health Insuarance</h3>
+                    <p style="color: black">You're own health is the most valuable thing.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <h1 class="my-4">Welcome to Celestial Insurances</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Family Insurance</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Car Insurance</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Health Insurance</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Our features</h2>
+            <p>We help our customers in an efficient way and care about their:</p>
+            <ul>
+                <li>
+                    <strong>Health</strong>
+                </li>
+                <li>Family</li>
+                <li>Car</li>
+                <li>Finances</li>
+            </ul>
+            <p>Being insured by us is being insured by a friend. You should always relax and let us take care of business when you need it the most.</p>
+        </div>
+        <div class="col-lg-6">
+            <img class="img-fluid rounded" src="https://www.stratalux.com/wp-content/uploads/2017/03/Leadership-and-Customer-Service-conference-resized-image.jpg" alt="customer" style="height: 450px; width: 700px">
+        </div>
+    </div>
+    <!-- /.row -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Celestial Insurances 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/contact_me.js}"></script>
+<script th:src="@{/js/jqBootstrapValidation.js}"></script>
 </body>
 </html>
