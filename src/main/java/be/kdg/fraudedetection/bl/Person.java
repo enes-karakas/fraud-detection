@@ -5,6 +5,7 @@ package be.kdg.fraudedetection.bl;
  * @version 1.0 12/02/18 16:37 *
  */
 
+import be.kdg.fraudedetection.bl.dom.RoleClaim;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
@@ -16,7 +17,7 @@ import java.util.Set;
 public class Person {
     @GraphId private Long id;
     private String name;
-    private String role;
+    private RoleClaim role;
 
     private Person() {
         // Empty constructor required as of Neo4j API 2.0.5
@@ -35,6 +36,6 @@ public class Person {
     }
 
     public String getRole() {
-        return role;
+        return role.toString();
     }
 }
