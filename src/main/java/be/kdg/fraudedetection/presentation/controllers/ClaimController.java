@@ -1,7 +1,9 @@
 package be.kdg.fraudedetection.presentation.controllers;
 
 import be.kdg.fraudedetection.bl.dom.Accident;
+import be.kdg.fraudedetection.bl.dom.RoleClaim;
 import be.kdg.fraudedetection.bl.dom.User;
+import be.kdg.fraudedetection.bl.dom.roles.Role;
 import be.kdg.fraudedetection.bl.service.AccidentService;
 import be.kdg.fraudedetection.presentation.DTO.AccidentDTO;
 import be.kdg.fraudedetection.presentation.helpers.ClaimControllerHelper;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class ClaimController {
@@ -44,6 +48,12 @@ public class ClaimController {
         }
 
         Accident accident = new Accident(accidentDTO);
+        Map<RoleClaim, String > roleClaimStringHashMap = new HashMap<RoleClaim, String>();
+        roleClaimStringHashMap.put(RoleClaim.DRIVER, "driver");
+        roleClaimStringHashMap.put(RoleClaim.WITNESS, "witness");
+        roleClaimStringHashMap.put(RoleClaim.PASSENGER, "passenger");
+        mav.addObject("roleClaimStringHashMap", roleClaimStringHashMap);
+
 //        service.saveAccident(accident);
 
         return mav;

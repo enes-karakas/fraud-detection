@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>new Accident</title>
@@ -34,6 +34,15 @@
     </div>
 </nav>
 <div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><span th:text="${firstname}"></span>, please give us more details about the accident</h4>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <form:select items="${roleClaimStringHashMap}"/>
+
+            </div>
 </div>
 
 </body>
