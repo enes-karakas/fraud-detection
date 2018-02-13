@@ -5,12 +5,9 @@ package be.kdg.fraudedetection.dal;
  * @version 1.0 12/02/18 17:32 *
  */
 
-import java.util.List;
-
-import be.kdg.fraudedetection.bl.Accident;
-import be.kdg.fraudedetection.bl.Person;
+import be.kdg.fraudedetection.bl.dom.Accident;
+import be.kdg.fraudedetection.bl.dom.Person;
 import org.springframework.data.neo4j.repository.GraphRepository;
-import org.springframework.data.repository.CrudRepository;
 
 public interface AccidentRepository extends GraphRepository<Accident> {
     Person findByDrivers(Person person);

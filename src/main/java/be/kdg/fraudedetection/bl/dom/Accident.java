@@ -1,12 +1,10 @@
-package be.kdg.fraudedetection.bl;
+package be.kdg.fraudedetection.bl.dom;
 
 /**
  * @author Loïc Gijsemans
  * @version 1.0 12/02/18 16:47 *
  */
 
-import be.kdg.fraudedetection.bl.dom.RoleClaim;
-import be.kdg.fraudedetection.bl.dom.roles.Role;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;

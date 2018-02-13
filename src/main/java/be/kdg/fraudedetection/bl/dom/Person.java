@@ -1,4 +1,4 @@
-package be.kdg.fraudedetection.bl;
+package be.kdg.fraudedetection.bl.dom;
 
 /**
  * @author Loïc Gijsemans
