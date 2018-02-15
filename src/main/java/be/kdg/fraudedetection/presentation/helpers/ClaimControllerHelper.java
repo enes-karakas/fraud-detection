@@ -31,7 +31,7 @@ public class ClaimControllerHelper {
     }
 
 
-    class SelectOption {
+    public class SelectOption {
         private final String id;
         private final String name;
 

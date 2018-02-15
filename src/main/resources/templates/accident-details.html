@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Accident Details</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!--    <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="webjars/bootstrap/4.0.0/css/bootstrap.css">-->
+    <link rel="stylesheet" media="screen" th:href="@{/css/modern-business.css}">
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/index.html">Celestial Insurances</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services.do">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <dl>
+        <dt>Description:</dt>
+        <dd th:text="${accident.name}"></dd>
+        <dt>Date:</dt>
+        <dd th:text="${accident.date}"></dd>
+        <dt>Witnesses:</dt>
+        <dd th:each="witness : ${accident.witnesses}" th:text="${witness.name}"></dd>
+        <dt>Drivers:</dt>
+        <dd th:each="driver : ${accident.drivers}" th:text="${driver.name}"></dd>
+        <dt>Passengers:</dt>
+        <dd th:each="passenger : ${accident.passengers}" th:text="${passenger.name}"></dd>
+    </dl>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Voeg een betrokkene toe aan het accident</h3>
+        </div>
+        <div class="panel-body">
+            <form th:action="'/accident.do/'+${accident.id}" method="post" th:object="${personDTO}" class="form"
+                  id="myForm">
+                <div class="form-group">
+                    <label for="person_name">Naam: </label>
+                    <input type="text" th:field="*{name}" class="form-control" id="person_name">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role: </label>
+                    <select class="form-control chosen" required="required" name="role" id="role" th:field="*{role}">
+                        <option value="0">Selecteer een rol</option>
+                        <option th:each="role : ${roles}" th:value="${role.name}" th:text="${role.name}"></option>
+                    </select>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Verzenden">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Celestial Insurances 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+<script type="application/javascript" th:src="@{/js/jquery-3.2.1.js}"></script>
+<script type="application/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<!--<script type="application/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script type="application/javascript" src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+<script th:src="@{/js/jqBootstrapValidation.js}"></script>
+
+</body>
+</html>

@@ -1,6 +1,8 @@
 package be.kdg.fraudedetection.bl.service;
 
 import be.kdg.fraudedetection.bl.dom.Accident;
+import be.kdg.fraudedetection.bl.dom.Person;
+import be.kdg.fraudedetection.bl.dom.RoleClaim;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,6 +61,20 @@ DETACH DELETE n
     public void testGetAccidentsForUser() {
         List<Accident> accidentsForUser = service.getAccidentsForUser(USER_ID);
         assertThat(accidentsForUser, hasSize(3));
+    }
+
+    @Test
+    public void testAddPersonToAccident() {
+        Accident initial = new Accident("Frontal car crash", "05/02/2018 06:53");
+        initial.setUserId(USER_ID);
+        service.saveAccident(initial);
+
+        Person person = new Person("Johnny Smith");
+        person.setRole(RoleClaim.DRIVER.getRole());
+        Accident out = service.addPersonToAccident(person, initial.getId());
+
+        assertThat(out.getDrivers(), hasSize(1));
+
     }
 
     @After

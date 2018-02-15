@@ -1,6 +1,7 @@
 package be.kdg.fraudedetection.bl.service;
 
 import be.kdg.fraudedetection.bl.dom.Accident;
+import be.kdg.fraudedetection.bl.dom.Person;
 import be.kdg.fraudedetection.dal.neo4j.AccidentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,19 @@ public class AccidentService {
     }
 
     public List<Long> deleteAllAccidentsByUserId(Integer userId) {
-       return repo.removeAllByUserId(userId);
+        return repo.removeAllByUserId(userId);
+    }
+
+    public Accident addPersonToAccident(Person person, Long accidentId) {
+        Accident initial = repo.findOne(accidentId);
+
+        if (initial == null) throw new RuntimeException("No accident with Id: " + accidentId);
+
+        initial.addPerson(person);
+        Accident out = repo.save(initial);
+
+        if (out == null) throw new RuntimeException("Accident could not be saved");
+
+        return out;
     }
 }

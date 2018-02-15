@@ -37,14 +37,14 @@ public class Accident {
         this.date = accidentDTO.getDate();
     }
 
-    @Relationship(type = "WITNESS", direction = Relationship.UNDIRECTED)
-    public Set<Person> witnesses;
-    @Relationship(type = "DRIVER", direction = Relationship.UNDIRECTED)
-    public Set<Person> drivers;
-    @Relationship(type = "PASSENGER", direction = Relationship.UNDIRECTED)
-    public Set<Person> passengers;
+    @Relationship(type = "WITNESS", direction = Relationship.INCOMING)
+    public Set<Person> witnesses = new HashSet<>();
+    @Relationship(type = "DRIVER", direction = Relationship.INCOMING)
+    public Set<Person> drivers = new HashSet<>();
+    @Relationship(type = "PASSENGER", direction = Relationship.INCOMING)
+    public Set<Person> passengers = new HashSet<>();
 
-    public void IsPartOfClaims(Person person) {
+    public void addPerson(Person person) {
 
         if (person.getRole().equals(RoleClaim.PASSENGER.getRole())) {
             if (passengers == null) {
